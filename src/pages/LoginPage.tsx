@@ -19,7 +19,7 @@ const LoginPage = () => {
       const user = await login(userId, password);
       console.log('Logged in successfully:', user);
       // In a real app, you'd redirect here
-      // window.location.href = '/';
+      window.location.href = '/home';
     } catch (err) {
       setError('Invalid credentials. Please try again.');
     }
