@@ -1,0 +1,52 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siphoxnkosi/malini-mvp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/siphoxnkosi/malini-mvp/issues"
+  },
+  "homepage": "https://github.com/siphoxnkosi/malini-mvp#readme",
+  "dependencies": {
+    "@radix-ui/react-checkbox": "^1.3.3",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-radio-group": "^1.3.8",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@tanstack/react-query": "^5.90.6",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.552.0",
+    "next-themes": "^0.4.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.5",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.3.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.2",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.16",
+    "vite-plugin-pwa": "^1.1.0"
+  }
+}
