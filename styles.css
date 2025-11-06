@@ -1,0 +1,61 @@
+/* Root Variables */
+:root {
+    --primary-color: #1B2040;
+    --accent-color: #A07F32;
+    --dark-text-color: #0F1324;
+    --background-light: #f7f7f7;
+    --card-light: #FFFFFF;
+    --text-light: #1B2040;
+    --subtle-light: #71727a;
+    --border-light: #dfe0e2;
+    --font-family-display: 'Inter', sans-serif;
+    --border-radius-default: 0.5rem;
+    --border-radius-lg: 0.75rem;
+    --border-radius-xl: 1rem;
+    --border-radius-full: 9999px;
+    --shadow-soft: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+    --shadow-soft-hover: 0 8px 20px 0 rgba(0, 0, 0, 0.08);
+}
+
+/* Global Styles */
+body {
+    font-family: var(--font-family-display);
+    background-color: var(--background-light);
+    color: var(--text-light);
+    margin: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ALL 9 SCREENS OF STYLING WILL GO HERE */
+
+/* Screen 1: Dashboard */
+/* ... */
+
+/* Screen 2: Join Bill */
+/* ... */
+
+/* Screen 3: Login */
+/* ... */
+
+/* Screen 4: Bill Ready */
+/* ... */
+
+/* Screen 5: Bill Splitting */
+/* ... */
+
+/* Screen 6: Add Item Modal */
+/* ... */
+
+/* Screen 7: Payment */
+/* ... */
+
+/* Screen 8: Bill Overview */
+/* ... */
+
+/* Screen 9: Past Bills */
+/* ... */
