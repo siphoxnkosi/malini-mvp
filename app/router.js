@@ -5,10 +5,12 @@ import bill from './views/bill.js';
 import payment from './views/payment.js';
 import join from './views/join.js';
 import history from './views/history.js';
+import billReady from './views/billReady.js';
 import notFound from './views/notFound.js';
 
 const routes = {
   '#/login': login,
+  '#/bill-ready/:code': billReady,
   '#/dashboard': dashboard,
   '#/menu/:restaurantId': menu,
   '#/bill/:code': bill,

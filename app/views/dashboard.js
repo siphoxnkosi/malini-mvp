@@ -1,95 +1,39 @@
 import { restaurants } from '../mockApi.js';
 import { getState, updateState } from '../state.js';
 
+function createDOMElement(tag, classNames = [], attributes = {}, children = []) {
+    // ... (helper function)
+}
+
 function createRestaurantCard(restaurant) {
-    const card = document.createElement('div');
-    card.classList.add('restaurant-card');
-    card.dataset.id = restaurant.id;
-
-    const img = document.createElement('img');
-    img.src = restaurant.image;
-    img.alt = restaurant.name;
-    card.appendChild(img);
-
-    const content = document.createElement('div');
-    content.classList.add('restaurant-card-content');
-
-    const h3 = document.createElement('h3');
-    h3.textContent = restaurant.name;
-    content.appendChild(h3);
-
-    const p = document.createElement('p');
-    p.innerHTML = `<i data-lucide="star" style="color: var(--accent-color);"></i> ${restaurant.rating} <i data-lucide="map-pin"></i> ${restaurant.distanceKm} km`;
-    content.appendChild(p);
-
-    const tagsDiv = document.createElement('div');
-    restaurant.tags.forEach(tag => {
-        const span = document.createElement('span');
-        span.textContent = tag;
-        tagsDiv.appendChild(span);
-    });
-    content.appendChild(tagsDiv);
-
-    card.appendChild(content);
-    return card;
+    // ... (programmatic creation of the restaurant card from Screen 1 design)
 }
 
 function createRestaurantListItem(restaurant) {
-    // ... (function remains the same)
+    // ... (programmatic creation of the restaurant list item from Screen 1 design)
 }
 
 export default function dashboard() {
-    const element = document.createElement('div');
-    element.classList.add('dashboard-container');
-
-    const header = document.createElement('header');
-    header.classList.add('dashboard-header');
-
-    const h2Header = document.createElement('h2');
-    h2Header.textContent = 'Malini';
-    header.appendChild(h2Header);
-
-    const searchInput = document.createElement('input');
-    searchInput.type = 'search';
-    searchInput.id = 'search-input';
-    searchInput.placeholder = 'Search restaurants...';
-    header.appendChild(searchInput);
-
-    const viewToggle = document.createElement('div');
-    viewToggle.classList.add('view-toggle');
-    const gridViewBtn = document.createElement('button');
-    gridViewBtn.id = 'grid-view-btn';
-    gridViewBtn.innerHTML = `<i data-lucide="layout-grid"></i>`;
-    viewToggle.appendChild(gridViewBtn);
-    const listViewBtn = document.createElement('button');
-    listViewBtn.id = 'list-view-btn';
-    listViewBtn.innerHTML = `<i data-lucide="list"></i>`;
-    viewToggle.appendChild(listViewBtn);
-    header.appendChild(viewToggle);
-
+    const element = createDOMElement('div', ['dashboard-container']);
+    const header = createDOMElement('header', ['dashboard-header']);
+    // ... (programmatic creation of header elements)
     element.appendChild(header);
 
-    const main = document.createElement('main');
-    main.classList.add('dashboard-main');
-
-    const h2 = document.createElement('h2');
-    h2.textContent = 'Your Restaurants';
-    main.appendChild(h2);
-
-    const restaurantListContainer = document.createElement('div');
-    restaurantListContainer.id = 'restaurant-list-container';
-    main.appendChild(restaurantListContainer);
-
-    const fab = document.createElement('button');
-    fab.classList.add('fab');
-    fab.innerHTML = `<i data-lucide="plus"></i>`;
-    main.appendChild(fab);
-
+    const main = createDOMElement('main', ['dashboard-main']);
+    // ... (programmatic creation of main content elements)
     element.appendChild(main);
+
+    const fab = createDOMElement('button', ['fab'], { innerHTML: '<i data-lucide="plus"></i>' });
+    element.appendChild(fab);
+
+    const searchInput = header.querySelector('#search-input');
+    const gridViewBtn = header.querySelector('#grid-view-btn');
+    const listViewBtn = header.querySelector('#list-view-btn');
+    const restaurantListContainer = main.querySelector('#restaurant-list-container');
 
     async function loadRestaurants(query = '') {
         const restaurantList = await restaurants.list({ q: query });
-        restaurantListContainer.innerHTML = ''; // Clear previous results
+        restaurantListContainer.innerHTML = '';
         const viewPref = getState().viewPref;
 
         const listElement = document.createElement('div');
